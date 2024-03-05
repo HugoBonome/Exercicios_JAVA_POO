@@ -1,6 +1,6 @@
 ENTROU NA SALA
 
-git git config --global user.email "hugo.zb@aluno.ifsc.edu.br"
+git config --global user.email "hugo.zb@aluno.ifsc.edu.br"
 git config --global user.name "Hugo Bonome"
 
 git clone https://github.com/HugoBonome/Exercicios_JAVA_POO.git
@@ -13,7 +13,7 @@ AO TERMINAR A AULA:
 
 git add
 git push
-git commit
+git commit -m "nome da pasta"
 
 
 CRIAÇÃO DE ARQUIVO GRADLE:
