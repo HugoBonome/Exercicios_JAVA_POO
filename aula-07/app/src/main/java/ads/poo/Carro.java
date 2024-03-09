@@ -13,6 +13,10 @@ public class Carro {
         velocidade+=v;
     }
 
+    public void freiar(double v){
+        velocidade-=v;
+    }
+
     public double obterVelocidade(){
         return velocidade;
     }
