@@ -7,9 +7,16 @@ public class App {
 
     public static void main(String[] args) {
 
-    Horario h = new Horario(12, 35, 45);
+        Horario h = new Horario(12, 00, 45);
 
         System.out.println(h);
+        System.out.println(h.horaEmSegundos());
 
+        Horario n = new Horario(12, 00, 41);
+
+        System.out.println(n);
+        System.out.println(n.horaEmSegundos());
+
+        System.out.println(h.difHorario(n));
     }
 }
