@@ -7,6 +7,15 @@ public class App {
 
     public static void main(String[] args) {
 
+        Retangulo r = new Retangulo();
+
+        System.out.println(r.getAltura());
+        System.out.println(r.getLargura());
+
+        System.out.println(r);
+
+        r.setAltura(5);
+        System.out.println(r);
 
 
     }
