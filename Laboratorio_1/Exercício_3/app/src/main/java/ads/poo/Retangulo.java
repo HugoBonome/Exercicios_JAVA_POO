@@ -94,30 +94,32 @@ public class Retangulo {
 //
 //        return representacao.toString();
 //    }
-public String toString() {
-    String figura = "";
+    public String toString() {
+        String figura = "";
 
-    figura += "+";
-    for (int i = 0; i < largura - 2; i++) {
-        figura += "-";
-    }
-    figura += "+\n";
-
-    for (int i = 0; i < altura - 2; i++) {
-        figura += "|";
-        for (int j = 0; j < largura - 2; j++) {
-            figura += " ";
+        figura += "+";
+        for (int i = 0; i < largura - 2; i++) {
+            figura += "-";
         }
-        figura += "|\n";
+        figura += "+\n";
+
+        for (int i = 0; i < altura - 2; i++) {
+            figura += "|";
+            for (int j = 0; j < largura - 2; j++) {
+                figura += " ";
+            }
+            figura += "|\n";
+        }
+
+        figura += "+";
+        for (int i = 0; i < largura - 2; i++) {
+            figura += "-";
+        }
+        figura += "+";
+
+        return figura;
     }
 
-    figura += "+";
-    for (int i = 0; i < largura - 2; i++) {
-        figura += "-";
-    }
-    figura += "+";
 
-    return figura;
-}
 
 }

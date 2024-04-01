@@ -7,7 +7,13 @@ public class App {
 
 public static void main(String[] args) {
 
+    Data a = new Data(5,2,2021);
 
+    System.out.println(a);
+
+    System.out.println(a.setDia(22));
+
+    System.out.println(a);
 
     }
 }
