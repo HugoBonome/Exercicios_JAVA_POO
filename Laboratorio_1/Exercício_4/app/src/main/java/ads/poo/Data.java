@@ -115,13 +115,8 @@ public class Data {
     }
 
     public long diferencaDatasEmDias(Data d) {
-//        long diasX = this.dia + (30 * this.mes) + (this.ano * 365);
-//        long diasY = d.dia + (d.mes * 30) + (d.ano * 365);
-//
-//        return diasX-diasY;
-        long difDias = Math.abs(d.dia - this.dia);
-        long difMes = 30 * (Math.abs(d.mes - this.mes));
-        long difAno = 365 * (Math.abs(d.ano - this.ano));
-        return difAno+difMes+difDias;
+        long diasX = this.dia + (30L * this.mes) + (this.ano * 365L);
+        long diasY = d.dia + (d.mes * 30L) + (d.ano * 365L);
+        return Math.abs(diasX-diasY);
     }
 }

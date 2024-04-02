@@ -13,12 +13,13 @@ public static void main(String[] args) {
 
     System.out.println(a);
 
-    Data b = new Data(31,4,2028);
+    Data b = new Data(31,1,2028);
 
     System.out.println(b);
 
+    System.out.println(a.diferencaDatasEmDias(b));
+
     Data c = new Data();
-
-
+    System.out.println(c);
     }
 }
