@@ -3,17 +3,22 @@
  */
 package ads.poo;
 
+import java.sql.SQLOutput;
+
 public class App {
 
 public static void main(String[] args) {
 
-    Data a = new Data(5,2,2021);
+    Data a = new Data(5,4,2024);
 
     System.out.println(a);
 
-    System.out.println(a.setDia(22));
+    Data b = new Data(31,4,2028);
 
-    System.out.println(a);
+    System.out.println(b);
+
+    Data c = new Data();
+
 
     }
 }
