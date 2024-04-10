@@ -30,3 +30,4 @@ org.gradle.logging.level=quiet
 
 Para fazer depuração pelo VS Code:
 
+pedir para o usuário digitar números inteiros, enquanto não for 999, perguntar novamente, SE DIGITAR 999 MOSTRAR TODOS OS ITENS NA TELA ORDENADOS
