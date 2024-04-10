@@ -20,6 +20,12 @@ CRIAÇÃO DE ARQUIVO GRADLE:
 cd Aula-xx
 Gradle Init
 
+limpar interface GRADLE:
+
+- Abrir "Settings.gradle
+inserir:
+org.gradle.console=plain
+org.gradle.logging.level=quiet
 
 
 Para fazer depuração pelo VS Code:
