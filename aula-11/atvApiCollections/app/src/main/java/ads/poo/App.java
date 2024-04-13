@@ -18,7 +18,7 @@ public class App {
 
         Integer i;
         do {
-            System.out.println("Entre com número");
+            System.out.println("Entre com o número");
             i = teclado.nextInt();
 
             if (i != 999){
@@ -27,8 +27,8 @@ public class App {
         } while (i != 999);
 
         while (!n.isEmpty()) {
-            System.out.println(n.getLast());
-            n.removeLast();
+            System.out.println(n.getFirst());
+            n.removeFirst();
         }
 
 
