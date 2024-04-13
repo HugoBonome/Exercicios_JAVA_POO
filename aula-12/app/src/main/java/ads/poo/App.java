@@ -48,7 +48,7 @@ public class App {
         }while(this.bancoDeDados.containsKey(matricula));
 
 
-        System.out.println("Insira o Cusro");
+        System.out.println("Insira o Curso");
         String curso = teclado.nextLine();
 
         System.out.println("Insira o Telefone");
@@ -70,13 +70,97 @@ public class App {
         return false;
     }
 
+    private boolean editarAluno(){
+        Scanner teclado = new Scanner(System.in);
+        String matricula = teclado.nextLine();
+        do{
+            System.out.println("Insira a matricula do aluno a ser editado");
+            matricula = teclado.nextLine();
+            if (!this.bancoDeDados.containsKey(matricula)){
+                System.out.println("Matricula não existente, tente novamente");
+            }
+        } while (!this.bancoDeDados.containsKey(matricula));
+
+        int opcao = 0;
+        System.out.println("Insira o número do dado que deseja alterar");
+        System.out.println("1 - Nome");
+        System.out.println("2 - Matrícula");
+        System.out.println("3 - Curso");
+        System.out.println("4 - Telefone");
+        System.out.println("5 - Email");
+        System.out.println("6 - Data de Nascimento");
+        System.out.println("7 - cancelar");
+
+        opcao = teclado.nextInt();
+        teclado.nextLine();
+        
+        Aluno aluno = this.bancoDeDados.get(matricula);
+
+        switch (opcao){
+            case 1 -> {
+                System.out.println("insira o novo nome:");
+                String novoNome = teclado.nextLine();
+                aluno.setNome(novoNome);
+
+            }
+            case 2 -> {
+                String novaMatricula;
+                do {
+                    System.out.println("Insira a Matrícula");
+                    novaMatricula = teclado.nextLine();
+                    if (this.bancoDeDados.containsKey(novaMatricula)){
+                        System.out.println("Matricula já existente, tente novamente");
+                    }
+
+                }while(this.bancoDeDados.containsKey(novaMatricula));
+                aluno.setMatricula(novaMatricula);
+                matricula = novaMatricula;
+
+            }
+            case 3 -> {
+                System.out.println("insira o novo curso:");
+                String novoCurso = teclado.nextLine();
+                aluno.setNome(novoCurso);
+
+
+            }
+            case 4 -> {
+                System.out.println("insira o novo telefone:");
+                String novoTelefone = teclado.nextLine();
+                aluno.setNome(novoTelefone);
+
+            }
+            case 5 -> {
+                System.out.println("insira o novo email:");
+                String novoEmail = teclado.nextLine();
+                aluno.setNome(novoEmail);
+
+            }
+            case 6 -> {
+                System.out.println("insira a nova data de nascimento:");
+                String novaData = teclado.nextLine();
+                aluno.setNome(novaData);
+            }
+            case 7 -> {
+                return false;
+            }
+            default -> System.out.println("Número inválido");
+        }
+
+        this.bancoDeDados.put(matricula,aluno);
+        return true;
+    }
+
     private String listarAluno(){
         Scanner teclado = new Scanner(System.in);
         String matricula;
         do{
             System.out.println("Insira a matricula do aluno a ser pesquisado");
             matricula = teclado.nextLine();
-        } while (this.bancoDeDados.containsKey(matricula));
+            if (!this.bancoDeDados.containsKey(matricula)){
+                System.out.println("Matricula não existente, tente novamente");
+            }
+        } while (!this.bancoDeDados.containsKey(matricula));
         return this.bancoDeDados.get(matricula).toString();
     }
 
@@ -86,9 +170,12 @@ public class App {
         do{
             System.out.println("Insira a matricula do aluno a ser excluido");
             matricula = teclado.nextLine();
-        } while (this.bancoDeDados.containsKey(matricula));
-
-
+            if (!this.bancoDeDados.containsKey(matricula)){
+                System.out.println("Matricula não existente, tente novamente");
+            }
+        } while (!this.bancoDeDados.containsKey(matricula));
+        this.bancoDeDados.remove(matricula);
+        return true;
     }
     private String listarTodos(){
         return bancoDeDados.toString();
@@ -107,8 +194,12 @@ public class App {
                         System.out.println("Usuário Cadastrado");
                     }
                 }
-//                case 2 -> app.editar();
-//                case 3 -> app.excluir();
+                case 2 -> app.editarAluno();
+               case 3 -> {
+                    if (app.excluirAluno()){
+                        System.out.println("Aluno Excluído");
+                    }
+               }
                 case 4 -> System.out.println(app.listarAluno());
                 case 5 -> System.out.println(app.listarTodos());
                 default -> System.out.println("Opção Inválida");
