@@ -24,7 +24,7 @@ public class App {
         System.out.println("1 - Cadastrar");
         System.out.println("2 - Editar");
         System.out.println("3 - Excluir");
-        System.out.println("4 - Listar dados de um alunos");
+        System.out.println("4 - Listar dados de um aluno");
         System.out.println("5 - Listar todos os alunos");
         System.out.println("6 - Sair");
         Scanner teclado = new Scanner(System.in);
@@ -63,8 +63,7 @@ public class App {
         LocalDate data = LocalDate.parse(dataString, formato);
 
         if (!this.bancoDeDados.containsKey(matricula)) {
-            Aluno a = new Aluno(nome, matricula, curso, telefone, email, data);
-            this.bancoDeDados.put(matricula,a);
+            this.bancoDeDados.put(matricula,new Aluno(nome, matricula, curso, telefone, email, data));
             return true;
         }
         return false;
@@ -101,7 +100,7 @@ public class App {
                 System.out.println("insira o novo nome:");
                 String novoNome = teclado.nextLine();
                 aluno.setNome(novoNome);
-
+                System.out.println("Nome Editado");
             }
             case 2 -> {
                 String novaMatricula;
@@ -115,40 +114,45 @@ public class App {
                 }while(this.bancoDeDados.containsKey(novaMatricula));
                 aluno.setMatricula(novaMatricula);
                 matricula = novaMatricula;
-
+                System.out.println("Matricula Editada");
+                return true;
             }
             case 3 -> {
                 System.out.println("insira o novo curso:");
                 String novoCurso = teclado.nextLine();
-                aluno.setNome(novoCurso);
-
-
+                aluno.setCurso(novoCurso);
+                System.out.println("Curso Editado");
+                return true;
             }
             case 4 -> {
                 System.out.println("insira o novo telefone:");
                 String novoTelefone = teclado.nextLine();
-                aluno.setNome(novoTelefone);
-
+                aluno.setTelefone(novoTelefone);
+                System.out.println("Telefone Editado");
+                return true;
             }
             case 5 -> {
                 System.out.println("insira o novo email:");
                 String novoEmail = teclado.nextLine();
-                aluno.setNome(novoEmail);
+                aluno.setEmail(novoEmail);
+                System.out.println("Email Editado");
+                return true;
 
             }
             case 6 -> {
                 System.out.println("insira a nova data de nascimento:");
-                String novaData = teclado.nextLine();
-                aluno.setNome(novaData);
+                LocalDate novaData = LocalDate.parse(teclado.nextLine());
+                aluno.setDataNascimento(novaData);
+                System.out.println("Data Editada");
+                return true;
+
             }
             case 7 -> {
                 return false;
             }
             default -> System.out.println("Número inválido");
         }
-
-        this.bancoDeDados.put(matricula,aluno);
-        return true;
+        return false;
     }
 
     private String listarAluno(){
@@ -194,7 +198,12 @@ public class App {
                         System.out.println("Usuário Cadastrado");
                     }
                 }
-                case 2 -> app.editarAluno();
+                case 2 -> {
+                    if (app.editarAluno()) {
+                        System.out.println("");
+                    }
+                    ;
+                }
                case 3 -> {
                     if (app.excluirAluno()){
                         System.out.println("Aluno Excluído");
