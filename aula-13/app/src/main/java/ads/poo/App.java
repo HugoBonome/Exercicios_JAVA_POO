@@ -14,7 +14,7 @@ public class App {
     public static void main(String[] args) {
 
         HashMap<String, Livro> bancoDeDados = new HashMap<>();
-        ArrayList<Autor> autoresReceita = new ArrayList<>();
+        ArrayList<Autor> autoresReceita = new ArrayList<>(3);
 
         Autor x = new Autor("juca", "Brasileiro");
         Autor y = new Autor("Juke", "Americano");
@@ -24,7 +24,6 @@ public class App {
 
         Livro a = new Livro("Receitas de Pudim", "1112223334445", 15.0,autoresReceita);
         bancoDeDados.put(a.getIsbn(), a);
-        System.out.println(a);
 
 
 
@@ -34,6 +33,10 @@ public class App {
         autoresMagia.add(z);
 
         Livro b = new Livro("Magia das Trevas Descomplicada", "2222333344445", 49.90,autoresMagia);
+
+        System.out.println(b);
+
+        b.adcionarAutor(y);
 
         System.out.println(b);
     }

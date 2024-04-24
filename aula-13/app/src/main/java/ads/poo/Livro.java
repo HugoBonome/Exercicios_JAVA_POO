@@ -17,15 +17,19 @@ public class Livro {
         this.autores = autores;
     }
 
+    public void adcionarAutor(Autor autor) {
+        this.autores.add(autor);
+    }
+
+
     @Override
     public String toString() {
 
-        return "Livro{" +
-                "titulo='" + titulo + '\'' +
-                ", preco=" + preco +
-                ", isbn='" + isbn + '\'' +
-                ", autores=" + autores.toString() +
-                '}';
+        return  "___________________" +
+                "\n titulo=" + titulo +
+                "\n preco=" + preco +
+                "\n isbn=" + isbn +
+                "\n autores=" + autores.toString();
     }
 
     public String getIsbn() {

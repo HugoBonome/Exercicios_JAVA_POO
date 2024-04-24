@@ -10,10 +10,11 @@ public class Autor {
         this.nacionalidade = nacionalidade;
     }
 
+
+
     @Override
     public String toString() {
-        return "Autor{" +
-                "nome='" + nome + '\'' +
+        return  "nome='" + nome + '\'' +
                 ", nacionalidade='" + nacionalidade + '\'' +
                 '}';
     }
