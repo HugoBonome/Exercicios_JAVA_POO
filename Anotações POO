@@ -22,10 +22,11 @@ Gradle Init
 
 limpar interface GRADLE:
 
-- Abrir "Settings.gradle
+- Criar arquivo na pasta geral de nome "gradle.properties"
 inserir:
 org.gradle.console=plain
 org.gradle.logging.level=quiet
+recarregar gradle (clicar no elefantinho)
 
 
 Para fazer depuração pelo VS Code:
