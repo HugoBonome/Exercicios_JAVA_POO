@@ -62,6 +62,7 @@ public class App {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate data = LocalDate.parse(dataString, formato);
 
+
         if (!this.bancoDeDados.containsKey(matricula)) {
             this.bancoDeDados.put(matricula,new Aluno(nome, matricula, curso, telefone, email, data));
             return true;
