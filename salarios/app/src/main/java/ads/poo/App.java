@@ -8,6 +8,10 @@ import java.sql.SQLOutput;
 public class App {
 
     public static void main(String[] args) {
-        
+
+        Funcionario hugo = new Efetivo("hugo", "123", 10, 1, 100, 1000);
+        System.out.println(hugo.calcularSalario());
+        Funcionario sergio = new horista("hugo", "123", 10, 1, 100, 1000);
+        System.out.println(hugo.calcularSalario());
     }
 }
